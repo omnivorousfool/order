@@ -467,6 +467,10 @@ def create_thread(target, args):
     t.start()
 
 if __name__ == '__main__':
+    '''
+    this is a module
+    test codes run from here
+    '''
     root = tk.Tk()
     app = numski(master=root, size=(8,7), mode='Test', shuffle_times=20)
     app.pack()
