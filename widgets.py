@@ -5,11 +5,11 @@ from time import sleep
 from threading import Thread
 import datetime
 
-def generate_font(size=22, weight=tkinter.font.BOLD):
+def generate_font(size=22, weight=tkinter.font.BOLD, *arg, **kw):
     '''
     font size 25 33 40 48
     '''
-    return tkinter.font.Font(family='Century Gothic', size=size, weight=weight)
+    return tkinter.font.Font(family='Century Gothic', size=size, weight=weight, *arg, **kw)
 
 def get_date():
     date = datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')
