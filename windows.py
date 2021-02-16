@@ -13,8 +13,12 @@ def trans(matrix):
     return result
 
 def load_records():
-    with open('records.numrcds', 'r') as numrcds:
-        meta = numrcds.read()
+    try:
+        with open('records.numrcds', 'r') as numrcds:
+            meta = numrcds.read()
+    except:
+        with open('records.numrcds', 'w') as numrcds:
+            meta = ''
     if meta == '':
         return [['You', 'have', 'not', 'played', 'NUMSKI', 'yet.']]
     records = meta.split('\n')
@@ -134,7 +138,7 @@ class records(dialog):
 
 img = None
 
-from os import popen
+from os import system, popen
 
 class about(dialog):
     def __init__(self, master=None):
@@ -144,7 +148,7 @@ class about(dialog):
         self.title_font = generate_font(size=40)
         self.link_font = generate_font(size=10, weight=tkinter.font.NORMAL, underline=True)
         img = tk.PhotoImage(file='GUI\pythonlogo.png')
-        self.link_cmd = lambda : popen('start https://github.com/omnivorousfool/numski')
+        self.link_cmd = lambda : system('start https://github.com/omnivorousfool/order')
         self.about_msg = \
 '\
 This is a game compiled by Python with GUI made by tkinter.\n\
@@ -157,7 +161,7 @@ Thanks for playing.\
         tk.Label(self, text='About NUMSKI', font=self.title_font, fg='black', bg='white').pack(side='top', padx=10)
         # tk.Label(self, image=img, bg='white').pack(side='top')
         tk.Label(self, text=self.about_msg, font=self.msg_font, image=img, fg='black', bg='white', justify='left', compound=tk.CENTER).pack(side='top', pady=20, padx=40)
-        button(self, text='source code: https://github.com/omnivorousfool/numski', font=self.link_font, command=self.link_cmd, changebg=False).pack(side='top', pady=5)
+        button(self, text='source code: https://github.com/omnivorousfool/order', font=self.link_font, command=self.link_cmd, changebg=False).pack(side='top', pady=5)
         
 
 import numski

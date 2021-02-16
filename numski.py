@@ -300,6 +300,10 @@ class numski(tk.Frame):
             self.status = False
             self.level = '%dx%d' % (self.size_x, self.size_y)
             winner = winner_dialog(self.master, time=self.time_lapsed, move=self.count, level=self.level, shuffle_times=self.shuffle_times, mode=self.mode)
+            def new_game():
+                self.master.master.create_select_menu()
+                self.master.destroy()
+            winner.new_game.cfg_cmd(new_game)
             winner.bind('<Escape>', lambda event: self.master.destroy())
 ##            winner.exit_btn.bind('<Button-1>', lambda event: self.master.destroy())
 ##            winner.new_game.bind('<Button-1>', lambda event: self.master.destroy())
@@ -467,10 +471,6 @@ def create_thread(target, args):
     t.start()
 
 if __name__ == '__main__':
-    '''
-    this is a module
-    test codes run from here
-    '''
     root = tk.Tk()
     app = numski(master=root, size=(8,7), mode='Test', shuffle_times=20)
     app.pack()

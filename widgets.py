@@ -550,7 +550,8 @@ class winner_dialog(dialog):
         win_info = "Time:%.5fs  Move:%d\nLevel:%s  Shuffle times:%d\nGamemode:%s\nDate:%s"%(time, move, level, shuffle_times, mode, date)        
         tk.Label(self, text=win_info, font=font__, bg='white', fg='black', bd=5).grid(column=0, row=2, columnspan=2, sticky='EW')
         self.exit_btn = button(self, text='Home', bd=5, font=font, command=self.master.destroy)
-        self.new_game = button(self, text='New game', bd=5, font=font, command=self.master.destroy)
+
+        self.new_game = button(self, text='New game', bd=5, font=font)
         self.exit_btn.grid(column=0, row=3, sticky=tk.EW)
         self.new_game.grid(column=1, row=3, sticky=tk.EW)
         self.align()
