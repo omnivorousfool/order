@@ -1,4 +1,4 @@
-# numski
+# order(numski)
 
 A game compiled by Python with GUI made by tkinter.
   
@@ -9,5 +9,7 @@ Almost no comments in these codes, but there would be enough comprehensive comme
 Requirements:
 
 Python 3.x (3.7 recommended)
+
+supported OS: windows
 
 no 3rd party packages required and make sure tkinter is installed
