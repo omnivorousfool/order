@@ -18,6 +18,5 @@
 * recommend **1080p** display resolution
 * please set the **display scale 100%** in order to make the size displayed
 * **'Century Gothic'** font family should be installed in order to ensure it can display properly
-
-you may download it from this **[link](https://www.cufonfonts.com/download/font/century-gothic)**
+and you may download it from this **[link](https://www.cufonfonts.com/download/font/century-gothic)**
 * **no** 3rd party packages required and make sure **tkinter** is installed
